@@ -44,5 +44,20 @@ const menuLinks = [
   subMenuEl.classList.add("flex-around");
   subMenuEl.style.position = "absolute";
   subMenuEl.style.top = "0";
+
+
+  const topMenuLinks = document.querySelectorAll("a");
+  topMenuEl.addEventListener("click", (event)=> {
+    event.preventDefault();
+    if(event.target.tagName !=="A"){
+        return;
+    }
+        else{
+            topMenuLinks.forEach((a) => a.classList.remove("active"));
+            event.target.classList.toggle("active");
+        }
+    
+  });
+
   
   
